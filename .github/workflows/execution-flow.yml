@@ -73,6 +73,8 @@ jobs:
     with:
       artifact-name: dist-files
       path-name: dist
+    # secrets:
+    #   some-secret: ${{ secrets.MONGODB_PASSWORD }}
 
   report:
     needs: [lint, build]
