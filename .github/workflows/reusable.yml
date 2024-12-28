@@ -1,0 +1,11 @@
+name: Reusable workflow Demo
+
+on: workflow_call
+jobs:
+    Fake-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy
+              run: |
+                echo "deploying..."
+                echo "deployed..."
