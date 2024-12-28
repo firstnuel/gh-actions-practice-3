@@ -8,6 +8,12 @@ on:
                 required: false
                 default: dist
                 type: string
+            path-name:
+                description: The name of the path for the artifact to be downloaded
+                required: false
+                default: dist
+                type: string
+
 jobs:
     Fake-deploy:
         runs-on: ubuntu-latest
@@ -16,6 +22,7 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: ${{ inputs.artifact-name }}
+                path: ${{ inputs.path-name }}
             - name: View files
               run: ls
             - name: Deploy
