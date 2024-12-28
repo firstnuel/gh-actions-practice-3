@@ -75,7 +75,14 @@ jobs:
       path-name: dist
     # secrets:
     #   some-secret: ${{ secrets.MONGODB_PASSWORD }}
+  print-deploy-output:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print deploy outcome
+        run: echo "${{ needs.deploy.outputs.result }}"
 
+      
   report:
     needs: [lint, build]
     if: failure()
