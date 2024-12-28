@@ -14,7 +14,7 @@ on:
                 default: dist
                 type: string
         outputs:
-            reuslt :
+            result :
                 description: The name of the path for the artifact to be downloaded
                 value: ${{ jobs.Fake-deploy.outputs.outcome }}
 
