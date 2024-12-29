@@ -21,4 +21,9 @@ jobs:
       - name: commit messages
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-        run: echo "$COMMIT_MESSAGES"
+        run: echo "$(COMMIT_MESSAGES)"
+      - name: join message
+        env:
+          JOINT_MESSAGES: ${{ join(github.event.commits.*.message, ', ') }}
+        run: echo "$(JOINT_MESSAGES)"
+      
